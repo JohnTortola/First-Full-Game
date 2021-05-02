@@ -124,10 +124,10 @@ public class VisualNovel : MonoBehaviour
 [System.Serializable]
 public struct TextInfo
 {
-    public Text textMain;
+    public TextMeshProUGUI textMain;
     [TextArea(10,15)]
     public string text;
     public int textMainSize;
-    public Font textMainFont;
-    public TextAnchor textMainAlignment;
+    public TMP_FontAsset textMainFont;
+    public TextAlignmentOptions textMainAlignment;
 }

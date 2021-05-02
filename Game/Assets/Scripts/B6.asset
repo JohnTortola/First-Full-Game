@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd82d8c061ec2a44a66f26388d069c0, type: 3}
   m_Name: B6
   m_EditorClassIdentifier: 
-  textMain: 
+  textMain: 'ROTA B
+
+    6
+
+
+    game over
+
+'
+  btnTextAux: []
   nextStates: []

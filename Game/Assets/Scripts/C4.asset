@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd82d8c061ec2a44a66f26388d069c0, type: 3}
   m_Name: C4
   m_EditorClassIdentifier: 
-  textMain: 
+  textMain: "ROTA C\n4\n\nvoc\xEA perdeu ambas as virgindades. ??? ending"
+  btnTextAux: []
   nextStates: []

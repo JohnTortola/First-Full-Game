@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd82d8c061ec2a44a66f26388d069c0, type: 3}
   m_Name: A3
   m_EditorClassIdentifier: 
-  textMain: 
-  nextStates: []
+  textMain: "ROTA A\n3\n\nvoc\xEA foi na casa do pedrinho.\ncomer ele(1)\ncomer a
+    m\xE3e dele(2)\nambos(3)"
+  btnTextAux:
+  - Comer ele
+  - "Comer a m\xE3e"
+  - Ambos
+  nextStates:
+  - {fileID: 11400000, guid: 89666fa6e88a60447874ba9d3716677e, type: 2}
+  - {fileID: 11400000, guid: 7fa6e312e832ffa4caf089b07821ef54, type: 2}
+  - {fileID: 11400000, guid: eb936023b623f3348900a8bfd0dbf100, type: 2}

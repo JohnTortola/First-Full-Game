@@ -12,5 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd82d8c061ec2a44a66f26388d069c0, type: 3}
   m_Name: A4
   m_EditorClassIdentifier: 
-  textMain: 
-  nextStates: []
+  textMain: 'ROTA A
+
+    4
+
+
+    o pedrinho te comeu.
+
+    se vingar(1)
+
+    desistir(2)'
+  btnTextAux:
+  - Vingue-se
+  - Desista
+  nextStates:
+  - {fileID: 11400000, guid: fe6efba90a3f80c4581f081474bb62a1, type: 2}
+  - {fileID: 11400000, guid: 0d7e81e7cbacce449abbcd0e6cb44df9, type: 2}

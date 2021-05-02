@@ -10,7 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbd82d8c061ec2a44a66f26388d069c0, type: 3}
-  m_Name: 01
+  m_Name: A2
   m_EditorClassIdentifier: 
-  textMain: texto1
-  nextStates: []
+  textMain: 'ROTA A
+
+    2
+
+
+    ir na casa do pedrinho(1) ou ir a escola(2)?'
+  btnTextAux:
+  - Pedrinho
+  - Escola
+  nextStates:
+  - {fileID: 11400000, guid: 18241a531f774e24893270e5e0d6fbe4, type: 2}
+  - {fileID: 11400000, guid: 5a701e6284a29ec4da606a2889f09ca8, type: 2}

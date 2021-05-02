@@ -28,6 +28,7 @@ public class StateControl : ScriptableObject
     public string[] getBtnText()
     {
         string[] btnText = new string[nextStates.Length];
+
         for(int i = 0; i < nextStates.Length; i++)
         {
             btnText[i] = btnTextAux[i];

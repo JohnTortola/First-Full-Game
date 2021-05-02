@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd82d8c061ec2a44a66f26388d069c0, type: 3}
   m_Name: A5
   m_EditorClassIdentifier: 
-  textMain: 
+  textMain: 'ROTA A
+
+    5
+
+
+    voce se vingou'
+  btnTextAux: []
   nextStates: []

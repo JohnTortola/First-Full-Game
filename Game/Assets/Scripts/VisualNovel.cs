@@ -2,43 +2,90 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class VisualNovel : MonoBehaviour
 {
     [SerializeField]
     StateControl stateFirst;
+    StateControl[] states;
+
+    [SerializeField]
+    GameObject canvas;
 
     StateControl state;
     public TextInfo textInfo;
 
-    public bool update;
     [SerializeField]
-    bool updateText;
+    Button buttonOne;
+    [SerializeField]
+    Button buttonTwo;
+    [SerializeField]
+    Button buttonThree;
+    public bool update;
+
     [SerializeField]
     bool forceStart;
 
     public void TextUpdate(bool isGameOn)
     {
+        buttonOne.gameObject.SetActive(false);
+        buttonTwo.gameObject.SetActive(false);
+        buttonThree.gameObject.SetActive(false);
         if (forceStart || isGameOn == false)
         {
             state = stateFirst;
-            StateControl[] states = state.getStates();
+            states = state.getStates();
         }
         else
         {
-            StateControl[] states = state.getStates();
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            states = state.getStates();
+
+            if (states.Length > 1) //se tiver escolhas
             {
-                state = states[0];
-            }else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                state = states[1];
+                string[] btnText = state.getBtnText();
+                switch (states.Length)
+                {
+                    case 2:
+                        buttonOne.gameObject.SetActive(true);
+                        buttonOne.GetComponentInChildren<TextMeshProUGUI>().text = btnText[0];
+                        buttonOne.onClick.AddListener(StateLoadOne);
+
+                        buttonTwo.gameObject.SetActive(true);
+                        buttonTwo.GetComponentInChildren<TextMeshProUGUI>().text = btnText[1];
+                        buttonTwo.onClick.AddListener(StateLoadTwo);
+
+                        buttonThree.gameObject.SetActive(false);
+                        
+                        break;
+                    case 3:
+                        buttonOne.gameObject.SetActive(true);
+                        buttonOne.GetComponentInChildren<TextMeshProUGUI>().text = btnText[0];
+                        buttonOne.onClick.AddListener(StateLoadOne);
+
+                        buttonTwo.gameObject.SetActive(true);
+                        buttonTwo.GetComponentInChildren<TextMeshProUGUI>().text = btnText[1];
+                        buttonTwo.onClick.AddListener(StateLoadTwo);
+
+                        buttonThree.gameObject.SetActive(true);
+                        buttonThree.GetComponentInChildren<TextMeshProUGUI>().text = btnText[2];
+                        buttonThree.onClick.AddListener(StateLoadThree);
+                        break;
+                    default:
+                        break;
+                }
             }
-        }
-        
-        if (updateText)
-        {
-            state.setText(textInfo.text);
+            else if(states.Length == 1)
+            {
+                buttonOne.gameObject.SetActive(false);
+                buttonTwo.gameObject.SetActive(false);
+                buttonThree.gameObject.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    state = states[0];
+                }
+            }
+
         }
         textInfo.textMain.text = state.getText();
         textInfo.text = textInfo.textMain.text;
@@ -47,16 +94,29 @@ public class VisualNovel : MonoBehaviour
         textInfo.textMain.alignment = textInfo.textMainAlignment;
     }
 
+    void StateLoadOne()
+    {
+        state = states[0];
+    }
+    void StateLoadTwo()
+    {
+        state = states[1];
+    }
+    void StateLoadThree()
+    {
+        state = states[2];
+    }
+
 
     void Start()
     {
-        forceStart = false;
         state = stateFirst;
-        TextUpdate(true);
     }
 
     void Update()
     {
+        forceStart = false;
+        update = false;
         TextUpdate(true);
     }
 }

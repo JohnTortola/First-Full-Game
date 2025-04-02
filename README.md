@@ -1,3 +1,3 @@
-# First-Full-Game
-Yes, first finished game
+# First-Game
+Just for studying
 test
